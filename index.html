@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub - Fashion E-Commerce</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>StyleHub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#sale">Sale</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="settings-icon"><i class="fas fa-cog"></i></a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Menu -->
+    <div class="profile-menu">
+        <div class="login-form">
+            <h3>Login</h3>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+                <p class="switch-form">Don't have an account? <a href="#" class="switch-to-signup">Sign Up</a></p>
+            </form>
+        </div>
+        
+        <div class="signup-form" style="display: none;">
+            <h3>Sign Up</h3>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <button type="submit" class="btn-submit">Sign Up</button>
+                <p class="switch-form">Already have an account? <a href="#" class="switch-to-login">Login</a></p>
+            </form>
+        </div>
+        
+        <div class="profile-content" style="display: none;">
+            <div class="profile-header">
+                <h3>My Account</h3>
+            </div>
+            <div class="profile-details">
+                <p class="user-name">User Name</p>
+                <p class="user-email">user@example.com</p>
+            </div>
+            <div class="profile-links">
+                <a href="#"><i class="fas fa-shopping-bag"></i> My Orders</a>
+                <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="btn checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Smart Slider -->
+    <section class="smart-slider">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <!-- Slide 1 -->
+                <div class="slide active" data-slide-id="1">
+                    <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                        <div class="slide-content">
+                            <h2>Summer Collection 2025</h2>
+                            <p>Discover the latest trends in fashion</p>
+                            <a href="#men" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide" data-slide-id="2">
+                    <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');">
+                        <div class="slide-content">
+                            <h2>New Arrivals</h2>
+                            <p>Be the first to shop our newest styles</p>
+                            <a href="#new" class="btn">Explore Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide" data-slide-id="3">
+                    <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                        <div class="slide-content">
+                            <h2>50% Off Selected Items</h2>
+                            <p>Limited time offer on premium fashion</p>
+                            <a href="#sale" class="btn">Shop Sale</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="prev-btn" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <button class="dot active" data-slide="1" aria-label="Go to slide 1"></button>
+                    <button class="dot" data-slide="2" aria-label="Go to slide 2"></button>
+                    <button class="dot" data-slide="3" aria-label="Go to slide 3"></button>
+                </div>
+                <button class="next-btn" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new" class="products">
+        <div class="container">
+            <div class="section-heading">
+                <h2>New Arrivals</h2>
+                <p>Be the first to discover our newest styles</p>
+            </div>
+            <div class="products-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmFzaGlvbiUyMG5ldyUyMGFycml2YWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="New Arrival 1">
+                        <div class="product-tags">
+                            <span class="tag new">New</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Casual Shirt</h3>
+                        <p class="product-price">$54.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(28)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="new-shirt-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="new-shirt-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1612336307429-8a898d10e223?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHdvbWVuJTIwZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="New Arrival 2">
+                        <div class="product-tags">
+                            <span class="tag new">New</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Contemporary Blazer</h3>
+                        <p class="product-price">$89.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(14)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="new-blazer-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="new-blazer-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBibG91c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="New Arrival 3">
+                        <div class="product-tags">
+                            <span class="tag new">New</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lightweight Summer Top</h3>
+                        <p class="product-price">$39.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(19)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="new-top-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="new-top-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFjY2Vzc29yeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="New Arrival 4">
+                        <div class="product-tags">
+                            <span class="tag new">New</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Elegant Wrist Watch</h3>
+                        <p class="product-price">$119.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(34)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="new-watch-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="new-watch-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn-outline">View All New Arrivals</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale Section -->
+    <section id="sale" class="products">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Sale Items</h2>
+                <p>Limited time offers on premium fashion</p>
+            </div>
+            <div class="products-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541346160430-93fcee39d671?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1lbiUyMGRlbmltfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Sale Item 1">
+                        <div class="product-tags">
+                            <span class="tag sale">Sale</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Denim Jeans</h3>
+                        <p class="product-price"><span class="original-price">$89.99</span> $49.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(112)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="sale-jeans-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="sale-jeans-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBqZWFuc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Sale Item 2">
+                        <div class="product-tags">
+                            <span class="tag sale">Sale</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Women's Slim Fit Jeans</h3>
+                        <p class="product-price"><span class="original-price">$79.99</span> $39.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(96)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="sale-womens-jeans-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="sale-womens-jeans-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Sale Item 3">
+                        <div class="product-tags">
+                            <span class="tag sale">Sale</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Graphic Print T-Shirt</h3>
+                        <p class="product-price"><span class="original-price">$34.99</span> $19.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(67)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="sale-tshirt-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="sale-tshirt-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2F0Y2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Sale Item 4">
+                        <div class="product-tags">
+                            <span class="tag sale">Sale</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Wrist Watch</h3>
+                        <p class="product-price"><span class="original-price">$199.99</span> $129.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(145)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="sale-watch-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="sale-watch-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn-outline">View All Sale Items</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <div class="category-heading">
+                <h2>Shop By Category</h2>
+            </div>
+            <div class="category-container">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Men's Fashion">
+                    <h3>Men's Collection</h3>
+                    <a href="#men" class="btn-outline">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29tZW5zJTIwZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Women's Fashion">
+                    <h3>Women's Collection</h3>
+                    <a href="#women" class="btn-outline">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWNjZXNzb3JpZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Accessories">
+                    <h3>Accessories</h3>
+                    <a href="#accessories" class="btn-outline">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="men" class="products">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Men's Collection</h2>
+                <p>Explore our latest men's fashion collection</p>
+            </div>
+            <div class="products-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593757147298-e064ed1419e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVuJTIwdHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Men's T-Shirt">
+                        <div class="product-tags">
+                            <span class="tag new">New</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Cotton T-Shirt</h3>
+                        <p class="product-price">$29.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(120)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="men-tshirt-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="men-tshirt-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541346160430-93fcee39d671?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1lbiUyMGRlbmltfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Men's Jeans">
+                        <div class="product-tags">
+                            <span class="tag sale">Sale</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Slim Fit Denim Jeans</h3>
+                        <p class="product-price"><span class="original-price">$79.99</span> $59.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(86)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="men-jeans-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="men-jeans-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1617114919297-3c8ddb01f599?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVuJTIwc2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Men's Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Oxford Shirt</h3>
+                        <p class="product-price">$49.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(203)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="men-shirt-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="men-shirt-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVuJTIwamFja2V0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Men's Jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3>Lightweight Bomber Jacket</h3>
+                        <p class="product-price">$89.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(68)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="men-jacket-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="men-jacket-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn-outline">View All Men's Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="women" class="products">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Women's Collection</h2>
+                <p>Explore our latest women's fashion collection</p>
+            </div>
+            <div class="products-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tZW4lMjBkcmVzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Women's Dress">
+                        <div class="product-tags">
+                            <span class="tag new">New</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Floral Summer Dress</h3>
+                        <p class="product-price">$59.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(142)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="women-dress-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="women-dress-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBibG91c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Women's Blouse">
+                    </div>
+                    <div class="product-info">
+                        <h3>Silk Button-Up Blouse</h3>
+                        <p class="product-price">$45.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(98)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="women-blouse-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="women-blouse-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW4lMjBqZWFuc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Women's Jeans">
+                        <div class="product-tags">
+                            <span class="tag sale">Sale</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>High-Waisted Slim Jeans</h3>
+                        <p class="product-price"><span class="original-price">$69.99</span> $49.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(215)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="women-jeans-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="women-jeans-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29tZW4lMjBzd2VhdGVyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Women's Sweater">
+                    </div>
+                    <div class="product-info">
+                        <h3>Oversized Knit Sweater</h3>
+                        <p class="product-price">$65.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(176)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="women-sweater-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="women-sweater-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn-outline">View All Women's Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="accessories" class="products">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Accessories Collection</h2>
+                <p>Complete your look with our stylish accessories</p>
+            </div>
+            <div class="products-container">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YWNjZXNzb3JpZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Leather Wallet">
+                        <div class="product-tags">
+                            <span class="tag new">New</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Genuine Leather Wallet</h3>
+                        <p class="product-price">$39.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(89)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="accessories-wallet-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="accessories-wallet-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2F0Y2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Classic Watch">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Timepiece Watch</h3>
+                        <p class="product-price">$129.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(156)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="accessories-watch-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="accessories-watch-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1611923134234-2449c459b3d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Sunglasses">
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Sunglasses</h3>
+                        <p class="product-price">$79.99</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(112)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-product-id="accessories-sunglasses-1">Add to Cart</button>
+                            <button class="btn-wishlist" data-product-id="accessories-sunglasses-1"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn-outline">View All Accessories</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-container">
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Free Shipping</h3>
+                    <p>On all orders over $50</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-undo"></i>
+                    <h3>Easy Returns</h3>
+                    <p>30 day return policy</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure checkout</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Customer service available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get exclusive offers and latest style updates</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>StyleHub</h3>
+                    <p>Your one-stop shop for the latest fashion trends in men's and women's clothing.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/elonmusk" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/roopsareesadan/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul> 
+                        <li><a href="#men">Men's Collection</a></li>
+                        <li><a href="#women">Women's Collection</a></li>
+                        <li><a href="#sale">Sale</a></li>
+                        <li><a href="#new">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion St, Style City</p>
+                        <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                        <p><i class="fas fa-envelope"></i> info@stylehub.com</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 StyleHub. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-content">
+            <div class="search-header">
+                <h3>Search Products</h3>
+                <button class="close-search"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="search-form-container">
+                <form class="search-form">
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="What are you looking for?" class="search-input">
+                        <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="search-filters">
+                        <select class="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="men">Men's Collection</option>
+                            <option value="women">Women's Collection</option>
+                            <option value="accessories">Accessories</option>
+                        </select>
+                        <select class="sort-filter">
+                            <option value="relevance">Sort by Relevance</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="search-results">
+                <!-- Search results will be populated here -->
+                <div class="no-results">
+                    <i class="fas fa-search"></i>
+                    <p>Enter a search term to see results</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Website Settings Modal -->
+    <div class="settings-modal">
+        <div class="settings-content">
+            <div class="settings-header">
+                <h3>Website Settings</h3>
+                <button class="close-settings"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="settings-body">
+                <div class="settings-section">
+                    <h4>Theme</h4>
+                    <div class="theme-options">
+                        <button class="theme-btn light-theme active" data-theme="light">
+                            <div class="theme-preview light"></div>
+                            <span>Light</span>
+                        </button>
+                        <button class="theme-btn dark-theme" data-theme="dark">
+                            <div class="theme-preview dark"></div>
+                            <span>Dark</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h4>Accent Color</h4>
+                    <div class="color-options">
+                        <button class="color-btn active" data-color="#f9a825" style="background-color: #f9a825;"></button>
+                        <button class="color-btn" data-color="#f44336" style="background-color: #f44336;"></button>
+                        <button class="color-btn" data-color="#2196f3" style="background-color: #2196f3;"></button>
+                        <button class="color-btn" data-color="#4caf50" style="background-color: #4caf50;"></button>
+                        <button class="color-btn" data-color="#9c27b0" style="background-color: #9c27b0;"></button>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h4>Text Size</h4>
+                    <div class="range-slider">
+                        <input type="range" min="80" max="120" value="100" class="text-size-slider" id="textSizeSlider">
+                        <div class="range-value">100%</div>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h4>Animations</h4>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="animationsToggle" checked>
+                        <label for="animationsToggle"></label>
+                        <span>Enable animations</span>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h4>Image Quality</h4>
+                    <div class="radio-options">
+                        <div class="radio-option">
+                            <input type="radio" id="highQuality" name="imageQuality" value="high" checked>
+                            <label for="highQuality">High Quality</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="lowQuality" name="imageQuality" value="low">
+                            <label for="lowQuality">Low Quality (Data Saver)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-footer">
+                <button class="btn-outline reset-settings">Reset to Default</button>
+                <button class="btn save-settings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
